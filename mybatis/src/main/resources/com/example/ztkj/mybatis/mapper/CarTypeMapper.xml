@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.ztkj.mybatis.mapper.CarTypeMapper">
+    <resultMap id="BaseResultMap" type="com.example.ztkj.mybatis.model.CarType">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="car_type" jdbcType="INTEGER" property="carType" />
+        <result column="car_type_name" jdbcType="VARCHAR" property="carTypeName" />
+        <result column="car_length" jdbcType="DOUBLE" property="carLength" />
+        <result column="capacity" jdbcType="DECIMAL" property="capacity" />
+        <result column="volume" jdbcType="DECIMAL" property="volume" />
+        <result column="length" jdbcType="INTEGER" property="length" />
+        <result column="width" jdbcType="INTEGER" property="width" />
+        <result column="height" jdbcType="INTEGER" property="height" />
+        <result column="priority" jdbcType="INTEGER" property="priority" />
+        <result column="trace_id" jdbcType="VARCHAR" property="traceId" />
+        <result column="enabled_flag" jdbcType="BIT" property="enabledFlag" />
+        <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
+        <result column="creation_date" jdbcType="TIMESTAMP" property="creationDate" />
+        <result column="updated_by" jdbcType="VARCHAR" property="updatedBy" />
+        <result column="updation_date" jdbcType="TIMESTAMP" property="updationDate" />
+    </resultMap>
+    <sql id="BaseTable">
+        car_type
+    </sql>
+
+    <select id="getById" resultMap="BaseResultMap">
+        SELECT *
+        FROM <include refid="BaseTable"/>
+        WHERE enabled_flag =1
+        AND id = #{id,jdbcType = BIGINT}
+    </select>
+</mapper>

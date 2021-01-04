@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: mybatis
+    abbr: MYBATIS
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://erp.mysql.m1.dev.kyeapi.com:13320/basic_data?allowMultiQueries=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: app_basic_data
+    password: EO3#@6ctFf
+
+mybatis:
+  mapper-locations: classpath:com/example/ztkj/mybatis/mapper/*Mapper.xml
+  type-aliases-package: com.example.ztkj.mybatis.model
+
+logging:
+  level:
+    ROOT: warn
+    org.springframework: info
+    org.springframework.web.servlet.view: info
+    org.springframework.web.servlet.mvc: info
+    io.undertow.request: info
+    com.example: debug
+    com.github.pagehelper: TRACE
+    com.zaxxer.hikari: TRACE
+  file:
+    name: /app/logs/${spring.application.name} # 日志文件保存路径
