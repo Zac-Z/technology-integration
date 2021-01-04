@@ -6,9 +6,9 @@ spring:
     abbr: MYBATIS
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://erp.mysql.m1.dev.kyeapi.com:13320/basic_data?allowMultiQueries=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
-    username: app_basic_data
-    password: EO3#@6ctFf
+    url: jdbc:mysql://ztkj.com:13320/car?allowMultiQueries=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: car
+    password: car
 
 mybatis:
   mapper-locations: classpath:com/example/ztkj/mybatis/mapper/*Mapper.xml
